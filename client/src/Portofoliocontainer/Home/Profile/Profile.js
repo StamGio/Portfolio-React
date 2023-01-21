@@ -1,5 +1,5 @@
 import React from "react";
-import TWriter from "./Twriter";
+import TWriter from "../Twriter";
 import "./Profile.css";
 
 export default function Profile() {

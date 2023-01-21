@@ -6,10 +6,10 @@ const Twriter = () => {
     words: [
       "Full Stack Developer",
       "Tech Enthusiast",
-      "Mern Stack Professional ",
+      "Mern Stack Professional",
     ],
     loop: false, // Infinit
-    typeSpeed: 70,
+    typeSpeed: 80,
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
