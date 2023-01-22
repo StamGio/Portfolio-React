@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TOTAL_SCREENS,
   GET_SCREEN_INDEX,
@@ -7,7 +7,6 @@ import ScrollService from "../../../Utilities/ScrollService";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
-import logo from "../../../assets/home/logo.jpg";
 
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
@@ -15,44 +14,48 @@ export default function Header() {
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
+
     let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
     if (screenIndex < 0) return;
   };
-
-  let currentScreenSubscription = ScrollService.currentScreenBroadCaster;
+  let currentScreenSubscription =
+    ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
-    return TOTAL_SCREENS.map((screen, i) => (
+    return TOTAL_SCREENS.map((Screen, i) => (
       <div
-        key={screen.screen_name}
-        className={getHeaderOptionsClass(i)}
-        onClick={() => switchScreen(i, screen)}
+        key={Screen.screen_name}
+        className={getHeaderOptionsClasses(i)}
+        onClick={() => switchScreen(i, Screen)}
       >
-        <span>{screen.screen_name}</span>
+        <span>{Screen.screen_name}</span>
       </div>
     ));
   };
 
-  // IF MORE THAN 1 SCREEN DISPLAY SPACE FUNCTION
-  const getHeaderOptionsClass = (index) => {
-    let classes = "header-options";
-    if (index < TOTAL_SCREENS.length - 1) classes += "header-options-seperator";
+  const getHeaderOptionsClasses = (index) => {
+    let classes = "header-option ";
+    if (index < TOTAL_SCREENS.length - 1) classes += "header-option-seperator ";
 
-    // SHOW NAME OF COMP MARKED AS SELECTED WHEN CLICKED
-    if (selectedScreen === index) classes += "Selected-header-option";
+    if (selectedScreen === index) classes += "selected-header-option ";
+
     return classes;
   };
 
-  // IMPLEMENT THE SWITCH BETWEEN THE SCREENS
   const switchScreen = (index, screen) => {
     let screenComponent = document.getElementById(screen.screen_name);
     if (!screenComponent) return;
 
-    // if it does scroll
     screenComponent.scrollIntoView({ behavior: "smooth" });
     setSelectedScreen(index);
     setShowHeaderOptions(false);
   };
+
+  useEffect(() => {
+    return () => {
+      currentScreenSubscription.unsubscribe();
+    };
+  }, [currentScreenSubscription]);
 
   return (
     <div
@@ -64,13 +67,10 @@ export default function Header() {
           className="header-hamburger"
           onClick={() => setShowHeaderOptions(!showHeaderOptions)}
         >
-          <FontAwesomeIcon className="headerr-hamburger-bars" icon={faBars} />
+          <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
         </div>
         <div className="header-logo">
-          <span>
-            {""}
-            Giovanis
-          </span>
+          <span>GIOVANIS</span>
         </div>
         <div
           className={
