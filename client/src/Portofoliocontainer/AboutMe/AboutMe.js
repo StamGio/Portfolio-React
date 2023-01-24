@@ -6,6 +6,8 @@ import ScrollService from "../../Utilities/ScrollService";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
+  // implement smooth scroll
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
     Animations.animations.faceInScreen(props.id);
@@ -13,6 +15,8 @@ export default function AboutMe(props) {
 
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
+  // Descriptions and bullets
 
   const SCREEN_CONSTANTS = {
     description:
@@ -29,6 +33,7 @@ export default function AboutMe(props) {
     },
   };
 
+  // Rendering everything
   const renderHighlight = () => {
     return SCREEN_CONSTANTS.highlights.bullets.map((value, i) => (
       <div className="highlight" key={i}>

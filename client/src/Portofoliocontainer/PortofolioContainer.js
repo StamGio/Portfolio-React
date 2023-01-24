@@ -1,6 +1,8 @@
 import React from "react";
 import { TOTAL_SCREENS } from "../Utilities/commonUtils";
 
+// Ternary operator to conditionally render a component
+
 export default function PortofolioContainer() {
   const mapAllScreens = () => {
     return TOTAL_SCREENS.map((screen) =>
