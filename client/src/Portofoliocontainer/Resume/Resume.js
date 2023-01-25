@@ -76,20 +76,20 @@ const Resume = (props) => {
     {
       title: "Portfolio-React",
       duration: { fromDate: "1/23", toDate: "2/23" },
-      description: "Neque porro quisquam est qui dolorem i",
+      description: "My personal portfolio build with React js",
       subHeading: "Technologies Used: React JS, Bootsrap",
     },
     {
       title: "StopIt website",
-      duration: { fromDate: "1/23", toDate: "2/23" },
-      description: "Neque porro quisquam est qui dolorem i",
-      subHeading: "Technologies Used: React JS, Bootsrap",
+      duration: { fromDate: "4/22", toDate: "5/22" },
+      description: "Non-profitable support for Alchoholics ",
+      subHeading: "Technologies Used: Javascript, Bootsrap",
     },
     {
       title: "Tindog",
-      duration: { fromDate: "1/23", toDate: "2/23" },
-      description: "Neque porro quisquam est qui dolorem i",
-      subHeading: "Technologies Used: React JS, Bootsrap",
+      duration: { fromDate: "1/22", toDate: "2/22" },
+      description: "Find the love for your lovely Dog , static website",
+      subHeading: "Technologies Used: HTML , Bootstrap v5",
     },
   ];
 
@@ -137,22 +137,29 @@ const Resume = (props) => {
 
         <div className="experience-description">
           <span className="resume-description-text">
+            - Developed a variety of small apps and websites, also studied a
+            large curriculum of necessary information about web development and
+            internet in general.{" "}
+          </span>
+          <br />
+          <div className="experience-description">
+            <ResumeHeading
+              heading={"Chef"}
+              subHeading={"Chef de Partie"}
+              fromDate={"2012"}
+              toDate={"2022"}
+            />
+          </div>
+          <span className="resume-description-text">
             - Worked for a decade as Chef in varius Restaurants and Hotels in
-            Greece and France.
+            Greece and France.{""}
           </span>
           <br />
 
-          <span className="resume-description-text">
-            - Countries Developed a variety of small apps and websites,also
-            covered a large curriculum of necessary informations about web
-            development and internet in general.{""}
-          </span>
-          <br />
-
-          <span className="resume-description-text">
+          {/* <span className="resume-description-text">
             - I stretch my mental capacity to develope UI as per the given
             designs.
-          </span>
+          </span> */}
           <br />
         </div>
       </div>
@@ -195,15 +202,17 @@ const Resume = (props) => {
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
         heading="Technology"
-        description="I really like to look for new technologies and news about software and hardware products."
+        description="I really like to look for new technologies and news about software and hardware products ."
       />
       <ResumeHeading
         heading="Sports"
-        description="Playing and watching sports its my hobby from my younger age until now, football and basketball are my most favourite ones "
+        description="Sports are my hobby from my younger age until now,
+        football and basketball are my most favourite ones but i enjoy most of them."
       />
       <ResumeHeading
         heading="Gaming"
-        description="Its my way to chill,playing and watching immersive stories is my favourite part."
+        description="My favourite way to chill. 
+        Playing and watching immersive stories is my favourite part ."
       />
     </div>,
   ];
