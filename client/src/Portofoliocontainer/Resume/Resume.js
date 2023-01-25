@@ -1,24 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
-
+import "./Resume.css";
 /* STATES */
-export default function Resume(props) {
-  const [selectedBulletItem, selectedBulletIndex] = useState(0);
-  const [carousalOffSetStyle, setCarousalSetStyle] = useState({});
+const Resume = (props) => {
+  const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
+  const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
+
+  // Implement smooth scroll
+
+  let fadeInScreenHandler = (screen) => {
+    if (screen.fadeInScreen !== props.id) return;
+
+    Animations.animations.fadeInScreen(props.id);
+  };
+
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   // REUSABLE MINOR COMPONENTS
 
   const ResumeHeading = (props) => {
-    <div className="resume-heading">
-      <div className="resume-main-heading">
-        <div className="heading-bullet">
+    return (
+      <div className="resume-heading">
+        <div className="resume-main-heading">
+          <div className="heading-bullet"></div>
           {/* Conditional Rendering  */}
           <span>{props.heading ? props.heading : ""} </span>
           {props.fromDate && props.toDate ? (
             <div className="heading-date">
-              {props.fromDate + "_" + props.toDate}
+              {props.fromDate + "-" + props.toDate}
             </div>
           ) : (
             <div></div>
@@ -31,22 +43,22 @@ export default function Resume(props) {
           <span>{props.description ? props.description : ""}</span>
         </div>
       </div>
-    </div>;
+    );
   };
 
   // STATIC RESUME DATA FOR THE LABELS
 
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
-    { label: "Work History", logoSrc: ".svg" },
-    { label: "Programming Skills", logoSrc: "education.svg" },
-    { label: "Projects", logoSrc: "education.svg" },
-    { label: "Interests", logoSrc: "education.svg" },
+    { label: "Work History", logoSrc: "work-history.svg" },
+    { label: "Programming Skills", logoSrc: "programming-skills.svg" },
+    { label: "Projects", logoSrc: "projects.svg" },
+    { label: "Interests", logoSrc: "interests.svg" },
   ];
 
   // Static data for skill progress
 
-  const ProgrammingSkillsDetails = [
+  const programmingSkillsDetails = [
     { skill: "JavaScript", ratingPercentage: 60 },
     { skill: "React Js", ratingPercentage: 30 },
     { skill: "Express Js", ratingPercentage: 30 },
@@ -60,31 +72,24 @@ export default function Resume(props) {
 
   // Static data for Resume
 
-  const projectDetails = [
+  const projectsDetails = [
     {
       title: "Portfolio-React",
-      date: { fromDate: "1/23", toDate: "2/23" },
+      duration: { fromDate: "1/23", toDate: "2/23" },
       description: "Neque porro quisquam est qui dolorem i",
-    },
-    {
-      title: "To do List",
-      date: { fromDate: "1/23", toDate: "2/23" },
-      description: "Neque porro quisquam est qui dolorem i",
+      subHeading: "Technologies Used: React JS, Bootsrap",
     },
     {
       title: "StopIt website",
-      date: { fromDate: "1/23", toDate: "2/23" },
+      duration: { fromDate: "1/23", toDate: "2/23" },
       description: "Neque porro quisquam est qui dolorem i",
+      subHeading: "Technologies Used: React JS, Bootsrap",
     },
     {
       title: "Tindog",
-      date: { fromDate: "1/23", toDate: "2/23" },
+      duration: { fromDate: "1/23", toDate: "2/23" },
       description: "Neque porro quisquam est qui dolorem i",
-    },
-    {
-      title: "Drumms",
-      date: { fromDate: "1/23", toDate: "2/23" },
-      description: "Neque porro quisquam est qui dolorem i",
+      subHeading: "Technologies Used: React JS, Bootsrap",
     },
   ];
 
@@ -136,12 +141,14 @@ export default function Resume(props) {
             Greece and France.
           </span>
           <br />
+
           <span className="resume-description-text">
             - Countries Developed a variety of small apps and websites,also
             covered a large curriculum of necessary informations about web
             development and internet in general.{""}
           </span>
           <br />
+
           <span className="resume-description-text">
             - I stretch my mental capacity to develope UI as per the given
             designs.
@@ -156,14 +163,14 @@ export default function Resume(props) {
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
     >
-      {ProgrammingSkillsDetails.map((skill, index) => (
+      {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
           <span>{skill.skill}</span>
           <div className="skill-percentage">
             <div
               style={{ width: skill.ratingPercentage + "%" }}
-              className="active-percentage"
+              className="active-percentage-bar"
             ></div>
           </div>
         </div>
@@ -172,14 +179,14 @@ export default function Resume(props) {
 
     // PROJECTS
     <div className="resume-screen-container" key="projects">
-      {projectDetails.map((projectDetails, index) => (
+      {projectsDetails.map((projectsDetails, index) => (
         <ResumeHeading
           key={index}
-          heading={projectDetails.title}
-          subHeading={projectDetails.subHeading}
-          description={projectDetails.description}
-          fromDate={projectDetails.duration.fromDate}
-          toDatea={projectDetails.duration.toDate}
+          heading={projectsDetails.title}
+          subHeading={projectsDetails.subHeading}
+          description={projectsDetails.description}
+          fromDate={projectsDetails.duration.fromDate}
+          toDate={projectsDetails.duration.toDate}
         />
       ))}
     </div>,
@@ -201,15 +208,50 @@ export default function Resume(props) {
     </div>,
   ];
 
-  //   // Implement smooth scroll
+  // Carousal function
+  const handleCarousal = (index) => {
+    let offsetHeight = 360;
 
-  let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animations.animations.faceInScreen(props.id);
+    let newCarousalOffset = {
+      style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
+    };
+    setCarousalOffsetStyle(newCarousalOffset);
+    setSelectedBulletIndex(index);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  // Bullets Function
+
+  const getBullets = () => {
+    return resumeBullets.map((bullet, index) => (
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
+        <img
+          className="bullet-logo"
+          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
+          alt="B"
+        />
+        <span className="bullet-label">{bullet.label}</span>
+      </div>
+    ));
+  };
+
+  //Get  Resume function
+
+  const getResumeScreens = () => {
+    return (
+      <div
+        style={carousalOffsetStyle.style}
+        className="resume-details-carousal"
+      >
+        {resumeDetails.map((ResumeDetail) => ResumeDetail)}
+      </div>
+    );
+  };
 
   // Reasonable component
 
@@ -217,7 +259,18 @@ export default function Resume(props) {
     <div className="resume-container screen-container" id={props.id || ""}>
       <div className="resume-content">
         <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <div className="resume-card">
+          <div className="resume-bullets">
+            <div className="bullet-container">
+              <div className="bullet-icons"></div>
+              <div className="bullets">{getBullets()}</div>
+            </div>
+          </div>
+          <div className="resume-bullet-details">{getResumeScreens()}</div>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Resume;
