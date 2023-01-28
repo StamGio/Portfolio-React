@@ -27,9 +27,9 @@ export default function AboutMe(props) {
         "Manage and create Databases",
         "Building REST API",
         "MERN stack applications",
-        "Passion for learning",
+        "Version Control",
       ],
-      heading: "Here are a Few Highlights",
+      heading: "Here are a few Highlights",
     },
   };
 
