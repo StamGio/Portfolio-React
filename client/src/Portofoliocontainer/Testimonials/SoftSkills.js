@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
 import "./SoftSkills.css";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+
 import shape from "../../../src/assets/Testimonial/shape-bg.png";
 
 export default function SoftSkills(props) {
@@ -17,6 +18,7 @@ export default function SoftSkills(props) {
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   //  Owl Carousel set up
+
   const options = {
     loop: true,
     margin: 0,
@@ -24,17 +26,27 @@ export default function SoftSkills(props) {
     animateIn: "bounceInRight",
     animateOut: "bounceOutRight",
     dots: true,
+    autoplayHoverPause: true,
     autoplay: true,
-    smartSpeed: 1000,
+    smartSpeed: 4000,
     responsive: {
       0: {
         items: 1,
+        nav: true,
       },
+      600: {
+        items: 3,
+        nav: true,
+      },
+
       768: {
-        items: 1,
+        items: 3,
+        nav: true,
       },
+
       1000: {
         items: 3,
+        nav: true,
       },
     },
   };
@@ -43,7 +55,7 @@ export default function SoftSkills(props) {
     <div>
       <ScreenHeading
         title={"Soft skills"}
-        subHeading={"This Skills are Part of my Character"}
+        subHeading={"These Skills are Part of my Character"}
       />
       <section className="testimonial-section" id={props.id || ""}>
         <div className="container">
@@ -155,7 +167,7 @@ export default function SoftSkills(props) {
                     </div>
                     <p>
                       <i className="fa fa-quote-left" />
-                      Learning and continuously skills improving is fundimental
+                      Continuously skills improving and learning are fundimental
                       for persons who have vision and dreams. Nowadays with all
                       these tools, self-teach can be in a high-level.
                       <i className="fa fa-quote-right" />

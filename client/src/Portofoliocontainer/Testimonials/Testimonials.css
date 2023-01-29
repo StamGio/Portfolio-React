@@ -1,4 +1,4 @@
-.testimonial-section {
+/* .testimonial-section {
   padding: 80px 0 80px;
   background-image: url("../../../src/assets/Testimonial/bg-1.jpg");
   background-position: center;
@@ -70,7 +70,7 @@
   padding-top: 5px;
   min-height: 60px;
 }
-/* .testimonial-section .client-info img {
+.testimonial-section .client-info img {
   height: 70px;
   width: 70px !important;
   border: 2px solid transparent;
@@ -79,7 +79,7 @@
   top: 0;
   border-radius: 50%;
   position: absolute;
-} */
+}
 .testimonial-section .client-info h5 {
   font-size: 16px;
   font-weight: 600;
@@ -91,4 +91,4 @@
   line-height: 26px;
   font-weight: 400;
   margin: 0;
-}
+} */
