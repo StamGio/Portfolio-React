@@ -202,7 +202,7 @@ const Resume = (props) => {
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
         heading="Technology"
-        description="I really like to look for new technologies and news about software and hardware products ."
+        description="I really like to explore for new technologies and news about software and hardware products ."
       />
       <ResumeHeading
         heading="Sports"
@@ -211,8 +211,8 @@ const Resume = (props) => {
       />
       <ResumeHeading
         heading="Gaming"
-        description="My favourite way to chill. 
-        Playing and watching immersive stories is my favourite part ."
+        description="This is my favourite way to chill. 
+        Playing and watching immersive stories is the best part of it."
       />
     </div>,
   ];
