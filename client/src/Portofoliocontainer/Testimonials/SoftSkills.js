@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
+import $ from "jquery";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
@@ -28,14 +29,15 @@ export default function SoftSkills(props) {
     dots: true,
     autoplayHoverPause: true,
     autoplay: true,
-    smartSpeed: 4000,
+    autoplayTimeout: 8000,
+    smartSpeed: 1000,
     responsive: {
       0: {
         items: 1,
         nav: true,
       },
       600: {
-        items: 3,
+        items: 1,
         nav: true,
       },
 
