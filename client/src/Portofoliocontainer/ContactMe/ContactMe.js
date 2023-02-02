@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-// import imgBack from "../../../src/images/mailz.jpeg";
-// import load1 from "../../../src/images/load2.gif";
+import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
 import { TypeAnimation } from "react-type-animation";
+import axios from "axios";
+import { toast } from "react-toastify";
 import imgBack from "../../../src/images/imgBack.jpeg";
 import "./ContactMe.css";
 
@@ -34,6 +35,29 @@ export default function ContactMe(props) {
   };
 
   console.log(name);
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
+      };
+      setBool(true);
+      const res = axios.post("/contact", data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="main-container" id={props.id || ""}>
@@ -42,7 +66,7 @@ export default function ContactMe(props) {
         <div className="col">
           <h2 className="title">
             <TypeAnimation
-              sequence={["Get in Touch 📧", 3000, "", 0]}
+              sequence={("Get in Touch 📧", 3000)}
               cursor={true}
               repeat={Infinity}
             />
@@ -68,7 +92,7 @@ export default function ContactMe(props) {
             <h4>Send Your Email Here!</h4>
             <img src={imgBack} alt="not found" />
           </div>
-          <form>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
             <input type="text" onChange={handleName} value={name} />
@@ -78,10 +102,18 @@ export default function ContactMe(props) {
 
             <label htmlFor="message">Message</label>
             <textarea type="text" onChange={handleMessage} value={message} />
-            <div className="sned-btn">
+
+            <div className="send-btn">
               <button type="submit">
                 Send
                 <i className="fa fa-paper-plane" />
+                {bool ? (
+                  <b className="load">
+                    <img src={load1} alt="no image" />
+                  </b>
+                ) : (
+                  ""
+                )}
               </button>
             </div>
           </form>

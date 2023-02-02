@@ -21,6 +21,7 @@ export default function SoftSkills(props) {
   //  Owl Carousel set up
 
   const options = {
+    items: 3,
     loop: true,
     margin: 0,
     nav: true,
@@ -30,7 +31,7 @@ export default function SoftSkills(props) {
     autoplayHoverPause: true,
     autoplay: true,
     autoplayTimeout: 8000,
-    smartSpeed: 1000,
+    smartSpeed: 2000,
     responsive: {
       0: {
         items: 1,
