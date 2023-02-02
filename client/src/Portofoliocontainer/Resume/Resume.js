@@ -265,7 +265,10 @@ const Resume = (props) => {
   // Reasonable component
 
   return (
-    <div className="resume-container screen-container" id={props.id || ""}>
+    <div
+      className="resume-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="resume-content">
         <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
         <div className="resume-card">

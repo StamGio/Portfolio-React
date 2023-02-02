@@ -12,8 +12,8 @@ import shape from "../../../src/assets/Testimonial/shape-bg.png";
 
 export default function SoftSkills(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animations.animations.faceInScreen(props.id);
+    if (screen.fadeInScreen !== props.id) return;
+    Animations.animations.fadeInScreen(props.id);
   };
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
@@ -60,7 +60,7 @@ export default function SoftSkills(props) {
         title={"Soft skills"}
         subHeading={"These Skills are Part of my Character"}
       />
-      <section className="testimonial-section" id={props.id || ""}>
+      <section className="testimonial-section fade-in" id={props.id || ""}>
         <div className="container">
           <div className="row">
             <OwlCarousel
