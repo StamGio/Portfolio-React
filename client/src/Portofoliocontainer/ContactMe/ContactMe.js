@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import imgBack from "../../../src/images/imgBack.jpeg";
 import "./ContactMe.css";
+import Button from "../../Portofoliocontainer/button/Button";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
@@ -66,7 +67,7 @@ export default function ContactMe(props) {
         <div className="col">
           <h2 className="title">
             <TypeAnimation
-              sequence={("Get in Touch 📧", 3000)}
+              sequence={["Get in Touch 📧", 3000, "", 0]}
               cursor={true}
               repeat={Infinity}
             />
@@ -109,7 +110,7 @@ export default function ContactMe(props) {
                 <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">
-                    <img src={load1} alt="no image" />
+                    <img src={load1} alt="no net" />
                   </b>
                 ) : (
                   ""
@@ -119,6 +120,7 @@ export default function ContactMe(props) {
           </form>
         </div>
       </div>
+      <Button />
     </div>
   );
 }

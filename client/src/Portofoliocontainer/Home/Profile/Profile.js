@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollService from "../../../Utilities/ScrollService";
 import TWriter from "../Twriter";
 import "./Profile.css";
 
@@ -48,7 +49,12 @@ export default function Profile() {
 
           {/*  BUTTONS */}
           <div className="profile-options">
-            <button className="btn primary-btn">{""} Hire Me</button>
+            <button
+              className="btn primary-btn"
+              onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+            >
+              Hire Me
+            </button>
             <a href="stamatis giovanis.pdf" download="stamatis giovanis.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
