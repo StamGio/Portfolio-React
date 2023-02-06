@@ -16,7 +16,11 @@ const Twriter = () => {
 
   return (
     <div className="TWriter">
-      <span>{text}</span>
+      <span className="shadow">
+        <span style={{ color: "#ff5823" }}>{text[0]}</span>
+
+        {text.slice(1)}
+      </span>
       <Cursor cursorStyle="|" />
     </div>
   );

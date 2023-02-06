@@ -28,13 +28,13 @@ export default function ContactMe(props) {
   const handleName = (e) => {
     setName(e.target.value);
   };
-  const handleEmail = (e) => {
+  const handleEmail = async (e) => {
     setEmail(e.target.value);
   };
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
-  console.log(name);
+  console.log(email);
   const submitForm = async (e) => {
     e.preventDefault();
     try {

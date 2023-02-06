@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
-import $ from "jquery";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
 import "./SoftSkills.css";
-
 import shape from "../../../src/assets/Testimonial/shape-bg.png";
 
 export default function SoftSkills(props) {
@@ -140,7 +138,7 @@ export default function SoftSkills(props) {
                   <div className="testi-comment">
                     <div className="client-info">
                       <img
-                        src="/img/algorithms.png"
+                        src="./img/algorithms.png"
                         alt="No internet connection"
                       />
 

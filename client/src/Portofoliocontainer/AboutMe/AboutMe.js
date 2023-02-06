@@ -20,7 +20,7 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTANTS = {
     description:
-      "Full stack web developer with background knowledge of MERN stack,Strong professional with willing to become a high performing member of a team and asset for an organization",
+      "I'm Stamatis Giovanis a full stack web developer with background knowledge of MERN stack,Strong professional with willing to become a high performing member of a team and asset for an organization",
     highlights: {
       bullets: [
         "Full Stack Development",
