@@ -30,7 +30,8 @@ export default function Profile() {
           </div>
           <div className="profile-details-name">
             <span className="primary-text">
-              {""}Hello, I'm <span className="highlighted-text">Stamatis</span>
+              {""}Welcome , I'm{" "}
+              <span className="highlighted-text">Stamatis</span>
             </span>
           </div>
           {/* checked */}
