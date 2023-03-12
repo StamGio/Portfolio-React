@@ -12,16 +12,16 @@ router.post("/contact", (req, res) => {
   }
 
   let smtpTransporter = nodemailer.createTransport({
-    service: "ICloud",
+    service: "Gmail",
     port: 465,
     auth: {
-      user: "stamatisgio@icloud.com",
-      pass: "zfmd-nclc-xtlt-feji",
+      user: "stamatisgiov@gmail.com",
+      pass: "qwfmwrncmidkcsdc",
     },
   });
   let mailOptions = {
     from: data.email,
-    to: "stamatisgio@icloud.com",
+    to: "stamatisgiov@gmail.com",
     subject: `message from ${data.name}`,
     html: `
 
