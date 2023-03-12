@@ -49,4 +49,9 @@ router.post("/contact", (req, res) => {
 });
 module.exports = router;
 
-// zfmd-nclc-xtlt-feji
+// service: "ICloud",
+// port: 465,
+// auth: {
+//   user: "stamatisgio@icloud.com",
+//   pass: "zfmd-nclc-xtlt-feji",
+// },
