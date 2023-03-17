@@ -74,13 +74,23 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
+      title: "For more info",
+      duration: { fromDate: "", toDate: "" },
+      description: "Click the link ☝️",
+      subHeading: (
+        <a className="linktree" href="https://linktr.ee/GioCodingDev">
+          Visit my linktree
+        </a>
+      ),
+    },
+    {
       title: "Portfolio-React",
       duration: { fromDate: "1/23", toDate: "2/23" },
       description: "My personal portfolio build with React js",
       subHeading: "Technologies Used: React JS, Bootsrap",
     },
     {
-      title: "StopIt website",
+      title: "StopIt",
       duration: { fromDate: "4/22", toDate: "5/22" },
       description: "Non-profitable support for Alchoholics ",
       subHeading: "Technologies Used: Javascript, Bootsrap",

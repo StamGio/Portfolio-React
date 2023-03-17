@@ -232,3 +232,11 @@
     width: 100%;
   }
 }
+
+.linktree {
+  color: black;
+}
+
+.linktree:hover {
+  color: #ff5823;
+}
