@@ -74,16 +74,6 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
-      title: "For more info",
-      duration: { fromDate: "", toDate: "" },
-      description: "Click the link ☝️",
-      subHeading: (
-        <a className="linktree" href="https://linktr.ee/GioCodingDev">
-          Visit my linktree
-        </a>
-      ),
-    },
-    {
       title: "Portfolio-React",
       duration: { fromDate: "1/23", toDate: "2/23" },
       description: "My personal portfolio build with React js",
@@ -100,6 +90,16 @@ const Resume = (props) => {
       duration: { fromDate: "1/22", toDate: "2/22" },
       description: "Find the love for your lovely Dog , static website",
       subHeading: "Technologies Used: HTML , Bootstrap v5",
+    },
+    {
+      title: "For more info",
+      duration: { fromDate: "", toDate: "" },
+      description: "Click the link ☝️",
+      subHeading: (
+        <a className="linktree" href="https://linktr.ee/GioCodingDev">
+          Visit my linktree
+        </a>
+      ),
     },
   ];
 
