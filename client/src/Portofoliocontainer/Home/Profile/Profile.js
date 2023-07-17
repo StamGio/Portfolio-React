@@ -3,8 +3,7 @@ import ScrollService from "../../../Utilities/ScrollService";
 import TWriter from "../Twriter";
 import "./Profile.css";
 
-const isMobile = window.innerWidth <= 768; // Define the maximum width for mobile view
-
+const isMobile = window.innerWidth <= 568;
 export default function Profile() {
   return (
     <div className="profile-container">

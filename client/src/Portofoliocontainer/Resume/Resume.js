@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
@@ -16,8 +16,7 @@ const Resume = (props) => {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   // REUSABLE MINOR COMPONENTS
 
@@ -61,10 +60,10 @@ const Resume = (props) => {
   const programmingSkillsDetails = [
     { skill: "JavaScript", ratingPercentage: 60 },
     { skill: "React Js", ratingPercentage: 30 },
-    { skill: "Express Js", ratingPercentage: 30 },
-    { skill: "Node Js", ratingPercentage: 40 },
-    { skill: "Mongo DB", ratingPercentage: 40 },
-    { skill: "Mongoose", ratingPercentage: 45 },
+    { skill: "Typescript", ratingPercentage: 40 },
+    { skill: "Node Js", ratingPercentage: 30 },
+    { skill: "Mongo DB", ratingPercentage: 30 },
+    { skill: "Mongoose", ratingPercentage: 30 },
     { skill: "HTML", ratingPercentage: 70 },
     { skill: "CSS", ratingPercentage: 70 },
     { skill: "Bootstrap v5", ratingPercentage: 60 },
@@ -74,22 +73,22 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
-      title: "Portfolio-React",
-      duration: { fromDate: "1/23", toDate: "2/23" },
-      description: "My personal portfolio build with React js",
-      subHeading: "Technologies Used: React JS, Bootsrap",
+      title: "AOE III Decks",
+      duration: { fromDate: "4/23", toDate: "7/23" },
+      description: "Deck ideas for AOE 3 game ",
+      subHeading: "Technologies Used: Typescript,React,Chakra UI",
     },
     {
-      title: "StopIt",
-      duration: { fromDate: "4/22", toDate: "5/22" },
-      description: "Non-profitable support for Alchoholics ",
-      subHeading: "Technologies Used: Javascript, Bootsrap",
+      title: "Portfolio React",
+      duration: { fromDate: "12/22", toDate: "2/23" },
+      description: "My personal portfolio build with React js",
+      subHeading: "Technologies Used: React JS, Bootsrap",
     },
     {
       title: "Tindog",
       duration: { fromDate: "1/22", toDate: "2/22" },
       description: "Find the love for your lovely Dog , static website",
-      subHeading: "Technologies Used: HTML , Bootstrap v5",
+      subHeading: "Technologies Used: HTML, CSS, Bootstrap v5",
     },
     {
       title: "For more info",
