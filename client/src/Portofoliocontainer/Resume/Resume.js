@@ -75,7 +75,7 @@ const Resume = (props) => {
     {
       title: "AOE III Decks",
       duration: { fromDate: "4/23", toDate: "7/23" },
-      description: "Deck ideas for AOE 3 game ",
+      description: "Deck ideas for Age Of Empires 3 game ",
       subHeading: "Technologies Used: Typescript,React,Chakra UI",
     },
     {
