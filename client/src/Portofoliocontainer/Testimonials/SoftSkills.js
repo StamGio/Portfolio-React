@@ -79,7 +79,7 @@ export default function SoftSkills(props) {
                     </div>
                     <p>
                       <i className="fa fa-quote-left" />
-                      My experiense in restaurants taught me to manage and
+                      My experience in restaurants taught me to manage and
                       organize my time,priorities and productivity in a
                       magnificent way. The value of time is critical in any
                       industry.
