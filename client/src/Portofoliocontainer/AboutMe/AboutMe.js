@@ -70,8 +70,8 @@ export default function AboutMe(props) {
                 {""} Hire Me{" "}
               </button>
               <a
-                href="./stamatis giovaniscv.pdf"
-                download="./stamatis giovaniscv.pdf"
+                href="./stamatis giovanis.pdf"
+                download="./stamatis giovanis.pdf"
               >
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>
