@@ -3,6 +3,8 @@ import ScrollService from "../../../Utilities/ScrollService";
 import TWriter from "../Twriter";
 import "./Profile.css";
 
+const isMobile = window.innerWidth <= 768; // Define the maximum width for mobile view
+
 export default function Profile() {
   return (
     <div className="profile-container">
@@ -38,9 +40,7 @@ export default function Profile() {
           <div className="profile-details-role">
             <span className="primary-text">
               {""}
-              <h1>
-                <TWriter />
-              </h1>
+              <h1>{isMobile ? "" : <TWriter />}</h1>
             </span>
             <span className="profile-role-tagline">
               {""} knack of building applications with front and back end

@@ -11,6 +11,7 @@ import "./Header.css";
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+  const isMobile = window.innerWidth <= 768;
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
@@ -56,6 +57,10 @@ export default function Header() {
       currentScreenSubscription.unsubscribe();
     };
   }, [currentScreenSubscription]);
+
+  if (isMobile) {
+    return null; // Render nothing if it's a mobile view
+  }
 
   return (
     <div
