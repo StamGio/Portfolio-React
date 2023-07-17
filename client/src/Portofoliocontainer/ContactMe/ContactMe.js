@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ScreenHeading from "../../Utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../Utilities/ScrollService";
 import Animations from "../../Utilities/Animations";
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
+import Getintouch from "./Getintouch";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Button from "../../Portofoliocontainer/button/Button";
@@ -16,8 +17,7 @@ export default function ContactMe(props) {
     Animations.animations.fadeInScreen(props.id);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -69,11 +69,12 @@ export default function ContactMe(props) {
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-            <TypeAnimation
+            <Getintouch />
+            {/* <TypeAnimation
               sequence={["Get in Touch 📧", 3000, "", 0]}
               cursor={true}
               repeat={Infinity}
-            />
+            /> */}
           </h2>
           <a href="https://www.facebook.com/stamatis.giovanis/">
             <i className="fa fa-facebook-square"></i>

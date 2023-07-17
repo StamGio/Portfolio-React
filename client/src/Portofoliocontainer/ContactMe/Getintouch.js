@@ -1,13 +1,9 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-const Twriter = () => {
+const Getintouch = () => {
   const { text } = useTypewriter({
-    words: [
-      "Full Stack Developer",
-      "Tech Enthusiast",
-      "Mern Stack Professional",
-    ],
+    words: ["Get in Touch"],
     loop: false, // Infinit
     typeSpeed: 80,
     deleteSpeed: 50,
@@ -26,4 +22,4 @@ const Twriter = () => {
   );
 };
 
-export default Twriter;
+export default Getintouch;
