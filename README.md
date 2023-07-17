@@ -2,7 +2,7 @@
 
 My portfolio website.
 
-Based on Udemy course The Ultimate ReactJs Responsive Portfolio Website By Ehizeex Okwuose          
+Based on Udemy course The Ultimate ReactJs Responsive Portfolio Website By Ehizeex Okwuose
 
 I recreated the website by dealing with some problems i faced and using my own info and style.
 also explore and train my git and github knowledge in this project.
