@@ -81,14 +81,14 @@ const Resume = (props) => {
     {
       title: "Portfolio React",
       duration: { fromDate: "12/22", toDate: "2/23" },
-      description: "My personal portfolio build with React js",
-      subHeading: "Technologies Used: React JS, Bootsrap",
+      description: "My personal portfolio",
+      subHeading: "Technologies Used: React JS, Bootsrap v5",
     },
     {
-      title: "Tindog",
-      duration: { fromDate: "1/22", toDate: "2/22" },
-      description: "Find the love for your lovely Dog , static website",
-      subHeading: "Technologies Used: HTML, CSS, Bootstrap v5",
+      title: "Game Hub",
+      duration: { fromDate: "2/23", toDate: "4/23" },
+      description: "A games explorer based on the RAWG API",
+      subHeading: "Technologies Used: Typescript,React,Chakra UI",
     },
     {
       title: "For more info",
