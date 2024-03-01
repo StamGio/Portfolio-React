@@ -1,9 +1,8 @@
-# Portofolio-React cleaned version
+# My portfolio website.
 
+![image](https://github.com/StamGio/Portfolio-React/assets/88937802/07658d70-af24-4bbf-813a-ceffe4e1ed2d)
 
-My portfolio website.
-
-Based on Udemy course The Ultimate ReactJs Responsive Portfolio Website By Ehizeex Okwuose
+Based on Udemy course The Ultimate ReactJs Responsive Portfolio Website .
 
 I recreated the website by dealing with some problems i faced and using my own info and style.
 also explore and train my git and github knowledge in this project.
